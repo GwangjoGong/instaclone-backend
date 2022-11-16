@@ -12,7 +12,7 @@ export const uploadToS3 = async (file, userId, folderName) => {
   const objectName = `${folderName}/${userId}-${Date.now()}-${filename}`;
   const { Location } = await new AWS.S3()
     .upload({
-      Bucket: "instaclone-uploads",
+      Bucket: "damons-instaclone-uploads",
       Key: objectName,
       ACL: "public-read",
       Body: readStream,
